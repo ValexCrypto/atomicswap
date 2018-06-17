@@ -561,6 +561,7 @@ func getRawChangeAddress(c *rpc.Client) (btcutil.Address, error) {
 }
 
 func promptPublishTx(c *rpc.Client, tx *wire.MsgTx, name string) error {
+	/*
 	reader := bufio.NewReader(os.Stdin)
 	for {
 		fmt.Printf("Publish %s transaction? [y/N] ", name)
@@ -577,7 +578,7 @@ func promptPublishTx(c *rpc.Client, tx *wire.MsgTx, name string) error {
 		default:
 			fmt.Println("please answer y or n")
 			continue
-		}
+		} */
 
 		txHash, err := c.SendRawTransaction(tx, false)
 		if err != nil {
